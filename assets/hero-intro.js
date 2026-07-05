@@ -69,8 +69,8 @@
   }
 
   function polishStats() {
-    var values = ['5 个月+', '985', '2 个', '3 年'];
-    var labels = ['百度实习时长', '研究生在读', 'AI HR 项目', '国家奖学金'];
+    var values = ['3 个', '985', 'Top 1', '3 年'];
+    var labels = ['AI HR 项目', '研究生在读', '专业排名', '国家奖学金'];
     var stats = Array.prototype.slice.call(document.querySelectorAll('._stat_cca9l_219'));
     if (stats.length < values.length) return false;
 
