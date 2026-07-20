@@ -153,6 +153,9 @@
         if (map[key]) item.logo = map[key];
       });
       (next.showcase || []).forEach(function (item) {
+        if (item.name === '简历管理系统') {
+          return;
+        }
         item.images = (item.images || []).map(function (image, index) {
           var key = showcaseKey(item, index);
           return map[key] || image;

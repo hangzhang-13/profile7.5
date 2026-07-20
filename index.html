@@ -27,6 +27,32 @@
         } catch (error) {}
       })();
     </script>
+    <script>
+      (function () {
+        var key = 'zhang-hang-portfolio-data';
+        try {
+          var saved = window.localStorage && window.localStorage.getItem(key);
+          if (!saved) return;
+
+          var portfolio = JSON.parse(saved);
+          portfolio.sections = (portfolio.sections || []).filter(function (section) {
+            return section.id !== 'experience';
+          });
+          portfolio.experience = [];
+
+          if (portfolio.showcase && portfolio.showcase[1]) {
+            portfolio.showcase[1].images = [
+              '/showcase/hrbp-resume-management/HRBP1.png',
+              '/showcase/hrbp-resume-management/HRBP2.png',
+              '/showcase/hrbp-resume-management/HRBP3.png',
+              '/showcase/hrbp-resume-management/HRBP4.png'
+            ];
+          }
+
+          window.localStorage.setItem(key, JSON.stringify(portfolio));
+        } catch (error) {}
+      })();
+    </script>
     <script src="/assets/image-persistence.js?v=portrait-fix-60"></script>
     <script type="module" crossorigin src="/assets/index-DKmlS5fO.js?v=portrait-fix-60"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BtIHCiuO.css?v=portrait-fix-60">
