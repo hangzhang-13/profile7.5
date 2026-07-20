@@ -61,6 +61,18 @@
     </script>
     <script src="/assets/image-persistence.js?v=portrait-fix-60"></script>
     <script type="module" crossorigin src="/assets/index-DKmlS5fO.js?v=portrait-fix-60"></script>
+    <script>
+      /* Remove the legacy local editing toolbar from the public site entirely. */
+      (function () {
+        function removeEditorToolbar() {
+          var toolbar = document.querySelector('div[class*="_container_1xjef_1"]');
+          if (toolbar) toolbar.remove();
+        }
+        var observer = new MutationObserver(removeEditorToolbar);
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        removeEditorToolbar();
+      })();
+    </script>
     <link rel="stylesheet" crossorigin href="/assets/index-BtIHCiuO.css?v=portrait-fix-60">
     <link rel="stylesheet" href="/assets/portrait-layout.css?v=portrait-fix-60">
   <script src="https://beacon.cdn.qq.com/sdk/4.5.9/beacon_web.min.js"></script>
