@@ -13,18 +13,24 @@
       rel="stylesheet"
     />
     <script>
+      /* The JSON file is the complete portfolio fallback. Refresh it on every visit. */
       (function () {
         var key = 'zhang-hang-portfolio-data';
+        var dataUrl = '/portfolio-data-1783243431258.json';
         try {
-          if (window.localStorage && !window.localStorage.getItem(key)) {
-            var request = new XMLHttpRequest();
-            request.open('GET', '/portfolio-data-1783243431258.json', false);
-            request.send(null);
-            if (request.status >= 200 && request.status < 300 && request.responseText) {
-              window.localStorage.setItem(key, request.responseText);
+          var request = new XMLHttpRequest();
+          request.open('GET', dataUrl + '?v=20260720-portfolio', false);
+          request.setRequestHeader('Cache-Control', 'no-cache');
+          request.send(null);
+          if (request.status >= 200 && request.status < 300 && request.responseText) {
+            var data = JSON.parse(request.responseText);
+            if (data && Array.isArray(data.showcase) && data.showcase.length >= 3) {
+              window.localStorage.setItem(key, JSON.stringify(data));
             }
           }
-        } catch (error) {}
+        } catch (error) {
+          /* Keep the last complete dataset available if the visitor is offline. */
+        }
       })();
     </script>
     <script>

@@ -1987,3 +1987,8 @@ body:has(.techMotionActive)::after {
     0 14px 32px rgba(96, 165, 250, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
 }
+
+/* The public site is read-only. */
+._container_1xjef_1 {
+  display: none !important;
+}
