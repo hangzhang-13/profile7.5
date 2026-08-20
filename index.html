@@ -55,6 +55,23 @@
             ];
           }
 
+          var showcaseOrder = [
+            '简历管理系统',
+            'HR 招聘工作台',
+            'ACG 实习生考勤日报系统',
+            'OfferMate'
+          ];
+          portfolio.showcase = (portfolio.showcase || []).slice().sort(function (a, b) {
+            function orderOf(project) {
+              var name = project && project.name || '';
+              for (var i = 0; i < showcaseOrder.length; i += 1) {
+                if (name.indexOf(showcaseOrder[i]) === 0) return i;
+              }
+              return showcaseOrder.length;
+            }
+            return orderOf(a) - orderOf(b);
+          });
+
           window.localStorage.setItem(key, JSON.stringify(portfolio));
         } catch (error) {}
       })();
