@@ -163,8 +163,8 @@
       "link": "",
       "description": "面向招聘 HR 的 AI 工作台，整合岗位管理、简历筛选、筛选结果池与推荐清单等核心流程。支持基于岗位 JD 与人才画像完成简历解析、匹配评估和候选人分层，帮助招聘人员更高效地推进候选人筛选与推荐。",
       "images": [
-        "showcase/hr-recruitment-workbench/01-position-management.png",
         "showcase/hr-recruitment-workbench/02-dashboard.png",
+        "showcase/hr-recruitment-workbench/01-position-management.png",
         "showcase/hr-recruitment-workbench/03-resume-screening.png",
         "showcase/hr-recruitment-workbench/04-screening-pool.png",
         "showcase/hr-recruitment-workbench/05-recommendations.png"

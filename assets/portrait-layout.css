@@ -370,6 +370,13 @@ body::after {
   background: rgba(255, 255, 255, 0.45) !important;
 }
 
+/* Keep widescreen product screenshots fully visible, including their sidebars. */
+._carouselImage_1s1tu_135 {
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.72);
+}
+
 ._footer_dw5hd_1 {
   border-top-color: rgba(14, 165, 233, 0.12) !important;
 }
